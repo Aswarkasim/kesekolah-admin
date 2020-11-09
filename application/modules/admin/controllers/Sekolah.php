@@ -9,9 +9,7 @@ class Sekolah extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    // if (($this->session->sekolahdata('id_sekolah') == "") || $this->session->sekolahdata('role') != "sekolah") {
-    //     redirect('error_page');
-    // }
+    is_logged_in_admin();
   }
 
 

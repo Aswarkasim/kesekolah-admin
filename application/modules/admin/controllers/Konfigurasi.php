@@ -6,6 +6,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Konfigurasi extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+        is_logged_in_admin();
+    }
+
+
     public function index()
     {
         $konfigurasi = $this->Crud_model->listingOne('tbl_konfigurasi', 'id_konfigurasi', '1');

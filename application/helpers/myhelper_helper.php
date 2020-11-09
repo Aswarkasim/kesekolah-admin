@@ -9,10 +9,10 @@ if (!function_exists('nominal')) {
     }
 }
 
-function is_logged_in_user()
+function is_logged_in_admin()
 {
     $ci = get_instance();
-    if (($ci->session->userdata('id_user') == '') && $ci->session->userdata('role') == '') {
+    if ($ci->session->userdata('id_admin') == '') {
         redirect('home/auth');
     }
 }

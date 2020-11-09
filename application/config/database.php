@@ -25,3 +25,11 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+
+/*
+
+u : u8939991_kesekolah
+p : CZA%@zitfcxO
+
+*/
