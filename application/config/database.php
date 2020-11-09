@@ -26,7 +26,7 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
-
+// adakah
 /*
 
 u : u8939991_kesekolah
