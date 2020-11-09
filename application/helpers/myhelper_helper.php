@@ -13,7 +13,7 @@ function is_logged_in_admin()
 {
     $ci = get_instance();
     if ($ci->session->userdata('id_admin') == '') {
-        redirect('home/auth');
+        redirect('admin/auth', 'refresh');
     }
 }
 
