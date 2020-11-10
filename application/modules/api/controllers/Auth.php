@@ -22,7 +22,7 @@ class Auth extends REST_Controller
       'password' => sha1($this->post('password'))
     ];
     $this->db->where($data);
-    $user = $this->db->get('tbl_admin')->row();
+    $user = $this->db->get('tbl_user')->row();
 
     if ($user) {
       $this->response(['status' => 'success', 'user' => $user], 201);
