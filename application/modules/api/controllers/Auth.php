@@ -25,9 +25,9 @@ class Auth extends REST_Controller
     $user = $this->db->get('tbl_user')->row();
 
     if ($user) {
-      $this->response(['status' => 'success', 'user' => $user], 201);
+      $this->response(['status' => 'success', 'error' => false, 'user' => $user], 201);
     } else {
-      $this->response(['status' => 'failed'], 502);
+      $this->response(['status' => 'failed', 'error' => false,], 502);
     }
   }
 }
