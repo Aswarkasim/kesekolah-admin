@@ -6,7 +6,10 @@ class Admin_model extends CI_Model
   function listAnak()
   {
     $this->db->select('tbl_anak.*,
-                            tbl_user.*, tbl_sekolah.nama_sekolah')
+                            tbl_user.alamat, 
+                            tbl_user.latitude, 
+                            tbl_user.longtitude, 
+                            tbl_sekolah.nama_sekolah')
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
       ->join('tbl_sekolah', 'tbl_anak.id_sekolah = tbl_sekolah.id_sekolah', 'LEFT');
@@ -17,7 +20,10 @@ class Admin_model extends CI_Model
   function listChildInSchool($id_sekolah)
   {
     $this->db->select('tbl_anak.*,
-                            tbl_user.*, tbl_sekolah.nama_sekolah')
+                            ttbl_user.alamat, 
+                            tbl_user.latitude, 
+                            tbl_user.longtitude, 
+                            tbl_sekolah.nama_sekolah')
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
       ->join('tbl_sekolah', 'tbl_anak.id_sekolah = tbl_sekolah.id_sekolah', 'LEFT')
@@ -28,7 +34,10 @@ class Admin_model extends CI_Model
   function listChildInUser($id_user)
   {
     $this->db->select('tbl_anak.*,
-                            tbl_user.*, tbl_sekolah.nama_sekolah')
+                            tbl_user.alamat, 
+                            tbl_user.latitude, 
+                            tbl_user.longtitude, 
+                            tbl_sekolah.nama_sekolah')
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
       ->join('tbl_sekolah', 'tbl_anak.id_sekolah = tbl_sekolah.id_sekolah', 'LEFT')
@@ -39,7 +48,10 @@ class Admin_model extends CI_Model
   function detailChild($id_anak)
   {
     $this->db->select('tbl_anak.*,
-                            tbl_user.*, tbl_sekolah.nama_sekolah')
+                            tbl_user.alamat, 
+                            tbl_user.latitude, 
+                            tbl_user.longtitude, 
+                            tbl_sekolah.nama_sekolah')
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
       ->join('tbl_sekolah', 'tbl_anak.id_sekolah = tbl_sekolah.id_sekolah', 'LEFT')
