@@ -73,9 +73,9 @@ class Anak extends REST_Controller
     $this->db->where('id_anak', $id_anak);
     $update = $this->db->update('tbl_anak', $data);
     if ($update) {
-      $this->response(['error' => 'false', 'data' => $data], 200);
+      $this->response(['error' => false, 'data' => $data], 200);
     } else {
-      $this->response(['error' => 'true'], 502);
+      $this->response(['error' => true], 502);
     }
   }
 }
