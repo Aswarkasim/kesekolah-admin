@@ -68,6 +68,7 @@ class Anak extends REST_Controller
   {
     $id_anak = $this->put('id_anak');
     $data = [
+      'id_anak'  => $id_anak,
       'is_ready' => $this->put('is_ready')
     ];
     $this->db->where('id_anak', $id_anak);

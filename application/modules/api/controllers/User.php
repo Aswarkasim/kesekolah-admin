@@ -22,7 +22,7 @@ class User extends REST_Controller
     } else {
       $user  = $this->Crud_model->listingOne('tbl_user', 'id_user', $id_user);
     }
-    $this->response($user, REST_Controller::HTTP_OK);
+    $this->response(['status' => 'success', 'error' => false, 'user' => $user], REST_Controller::HTTP_OK);
   }
 
   function index_put()
