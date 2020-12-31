@@ -18,7 +18,7 @@ class Sekolah extends REST_Controller
   public function index_get()
   {
     $sekolah = $this->Crud_model->listing('tbl_sekolah');
-    $this->response(['status' => 'success', 'error' => false, 'user' => $sekolah], REST_Controller::HTTP_OK);
+    $this->response(['status' => 'success', 'error' => false, 'sekolah' => $sekolah], REST_Controller::HTTP_OK);
   }
 }
 
