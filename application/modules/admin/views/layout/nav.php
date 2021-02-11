@@ -32,11 +32,11 @@ $role = $this->session->userdata('role');
                         ?>"><a href="<?php echo base_url('admin/sekolah')
                                         ?>"><i class="fa fa-building"></i> <span>Sekolah</span></a></li>
 
-            <li class="<?php if ($this->uri->segment(2) == "payment") {
-                            echo "active";
-                        }
-                        ?>"><a href="<?php echo base_url('admin/payment')
-                                        ?>"><i class="fa fa-money"></i> <span>Payment</span></a></li>
+            <!-- <li class="<?php if ($this->uri->segment(2) == "payment") {
+                                echo "active";
+                            }
+                            ?>"><a href="<?php echo base_url('admin/payment')
+                                        ?>"><i class="fa fa-money"></i> <span>Payment</span></a></li> -->
 
 
 

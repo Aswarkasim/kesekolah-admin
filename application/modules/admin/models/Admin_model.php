@@ -6,6 +6,7 @@ class Admin_model extends CI_Model
   function listAnak()
   {
     $this->db->select('tbl_anak.*,
+                            tbl_user.namalengkap, 
                             tbl_user.alamat, 
                             tbl_user.latitude, 
                             tbl_user.longtitude, 
@@ -13,6 +14,15 @@ class Admin_model extends CI_Model
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
       ->join('tbl_sekolah', 'tbl_anak.id_sekolah = tbl_sekolah.id_sekolah', 'LEFT');
+    return $this->db->get()->result();
+  }
+
+  function listJemput($id_sekolah, $is_jemput)
+  {
+    $this->db->select('*')
+      ->from('tbl_anak')
+      ->where('id_sekolah', $id_sekolah)
+      ->where('is_jemput', $is_jemput);
     return $this->db->get()->result();
   }
 
