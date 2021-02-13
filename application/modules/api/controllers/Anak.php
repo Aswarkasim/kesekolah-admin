@@ -138,7 +138,7 @@ class Anak extends REST_Controller
     if ($update) {
       $this->response([
         'error' => false,
-        'anak'  => $get,
+        'anak'  => $id_anak,
         'message' => 'Data siap anak berhasil dipost',
       ], 200);
     } else {
