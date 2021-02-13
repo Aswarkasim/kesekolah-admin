@@ -131,9 +131,14 @@ class Anak extends REST_Controller
     ];
     $this->db->where('id_anak', $id_anak);
     $update = $this->db->update('tbl_anak', $data);
+
+
+    $this->db->where('id_anak', $id_anak);
+    $get = $this->db->get('tbl_anak');
     if ($update) {
       $this->response([
         'error' => false,
+        'anak'  => $get,
         'message' => 'Data siap anak berhasil dipost',
       ], 200);
     } else {
