@@ -109,7 +109,7 @@ class Anak extends REST_Controller
     ];
     $this->db->where('id_anak', $id_anak);
     $update = $this->db->update('tbl_anak', $data);
-    if (!$update) {
+    if ($update) {
       $this->response([
         'error' => false,
         'message' => 'Data siap anak berhasil diubah',
