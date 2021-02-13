@@ -134,12 +134,12 @@ class Anak extends REST_Controller
     if ($update) {
       $this->response([
         'error' => false,
-        'message' => 'Data siap anak berhasil diubah',
+        'message' => 'Data siap anak berhasil dipost',
       ], 200);
     } else {
       $this->response([
         'error' => true,
-        'message' => 'Data siap anak gagal diubah',
+        'message' => 'Data siap anak gagal dipost',
       ], 502);
     }
   }
