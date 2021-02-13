@@ -32,4 +32,9 @@ $db['default'] = array(
 u : u8939991_kesekolah
 p : CZA%@zitfcxO
 
+
+From ikuttes
+u :u1275396_kesekolah
+p : t_Q#{XgDZ,T9
+
 */

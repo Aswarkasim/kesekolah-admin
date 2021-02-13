@@ -126,6 +126,7 @@ class Anak extends REST_Controller
   {
     $id_anak = $this->post('id_anak');
     $data = [
+      'id_anak'   => $id_anak,
       'is_ready' => $this->post('is_ready')
     ];
     $this->db->where('id_anak', $id_anak);
