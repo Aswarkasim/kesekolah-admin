@@ -17,12 +17,13 @@ class Anak extends REST_Controller
     $id_anak = $this->get('id_anak');
     $id_sekolah = $this->get('id_sekolah');
     $id_user = $this->get('id_user');
+    $is_jemput = $this->get('is_jemput');
     if ($id_anak) {
       $child = $this->AM->detailChild($id_anak);
     } else if ($id_user) {
       $child = $this->AM->listChildInUser($id_user);
     } else if ($id_sekolah) {
-      $child = $this->AM->listChildInSchool($id_sekolah);
+      $child = $this->AM->listChildInSchool($id_sekolah, $is_jemput);
     } else {
       $child = $this->db->get('tbl_anak')->result();
     }
