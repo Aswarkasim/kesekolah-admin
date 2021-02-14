@@ -30,7 +30,7 @@ class Admin_model extends CI_Model
   function listChildInSchool($id_sekolah)
   {
     $this->db->select('tbl_anak.*,
-                            ttbl_user.alamat, 
+                            tbl_user.alamat, 
                             tbl_user.latitude, 
                             tbl_user.longtitude, 
                             tbl_sekolah.nama_sekolah')
