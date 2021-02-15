@@ -102,6 +102,8 @@ class User extends REST_Controller
       'gender'        => $this->post('gender'),
       'nohp'          => $this->post('nohp'),
       'alamat'        => $this->post('alamat'),
+      'latitude'        => $this->post('latitude'),
+      'longitude'        => $this->post('longitude'),
       'gambar'          => $gambar
     ];
     $this->db->where('id_user', $id_user);
