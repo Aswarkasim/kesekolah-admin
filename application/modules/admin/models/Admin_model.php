@@ -9,7 +9,7 @@ class Admin_model extends CI_Model
                             tbl_user.namalengkap, 
                             tbl_user.alamat, 
                             tbl_user.latitude, 
-                            tbl_user.longtitude, 
+                            tbl_user.longitude, 
                             tbl_sekolah.nama_sekolah')
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
@@ -32,7 +32,7 @@ class Admin_model extends CI_Model
     $this->db->select('tbl_anak.*,
                             tbl_user.alamat, 
                             tbl_user.latitude, 
-                            tbl_user.longtitude, 
+                            tbl_user.longitude, 
                             tbl_sekolah.nama_sekolah')
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
@@ -47,7 +47,7 @@ class Admin_model extends CI_Model
     $this->db->select('tbl_anak.*,
                             tbl_user.alamat, 
                             tbl_user.latitude, 
-                            tbl_user.longtitude, 
+                            tbl_user.longitude, 
                             tbl_sekolah.nama_sekolah')
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
@@ -61,7 +61,7 @@ class Admin_model extends CI_Model
     $this->db->select('tbl_anak.*,
                             tbl_user.alamat, 
                             tbl_user.latitude, 
-                            tbl_user.longtitude, 
+                            tbl_user.longitude, 
                             tbl_sekolah.nama_sekolah')
       ->from('tbl_anak')
       ->join('tbl_user', 'tbl_anak.id_user = tbl_user.id_user', 'LEFT')
