@@ -88,12 +88,12 @@ class User extends REST_Controller
           REST_Controller::HTTP_INTERNAL_SERVER_ERROR
         );
       } else {
-        // $this->db->where('id_user', $id_user);
-        // $user = $this->db->get('tbl_user')->row();
+        $this->db->where('id_user', $id_user);
+        $user = $this->db->get('tbl_user')->row();
 
-        // if ($user->gambar != "") {
-        //   unlink($user->gambar);
-        // }
+        if ($user->gambar != "") {
+          unlink($user->gambar);
+        }
 
         $upload_data = ['uploads' => $this->upload->data()];
         $gambar  = $config['upload_path'] . $upload_data['uploads']['file_name'];
