@@ -112,11 +112,12 @@ class User extends REST_Controller
       'longitude'     => $this->post('longitude'),
       'gambar'        => $gambar
     ];
-    $this->db->where('id_user', $id_user);
-    $update = $this->db->update('tbl_user', $data);
+    //  $this->db->where('id_user', $id_user);
+    // $update = $this->db->update('tbl_user', $data);
 
-    $this->db->where('id_user', $id_user);
-    $user = $this->db->get('tbl_user')->row();
+    $update = $this->Crud_model->edit('tbl_user', 'id_user', $id_user, $data);
+    // $this->db->where('id_user', $id_user);
+    // $user = $this->db->get('tbl_user')->row();
 
     if ($update) {
       $this->response([
