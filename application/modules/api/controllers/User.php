@@ -88,12 +88,12 @@ class User extends REST_Controller
           REST_Controller::HTTP_INTERNAL_SERVER_ERROR
         );
       } else {
-        $this->db->where('id_user', $id_user);
-        $user = $this->db->get('tbl_user')->row();
+        // $this->db->where('id_user', $id_user);
+        // $user = $this->db->get('tbl_user')->row();
 
-        if ($user->gambar != "") {
-          unlink($user->gambar);
-        }
+        // if ($user->gambar != "") {
+        //   unlink($user->gambar);
+        // }
 
         $upload_data = ['uploads' => $this->upload->data()];
         $gambar  = $config['upload_path'] . $upload_data['uploads']['file_name'];
@@ -112,10 +112,9 @@ class User extends REST_Controller
       'longitude'     => $this->post('longitude'),
       'gambar'        => $gambar
     ];
-    //  $this->db->where('id_user', $id_user);
-    // $update = $this->db->update('tbl_user', $data);
+    $this->db->where('id_user', $id_user);
+    $update = $this->db->update('tbl_user', $data);
 
-    $update = $this->Crud_model->edit('tbl_user', 'id_user', $id_user, $data);
     // $this->db->where('id_user', $id_user);
     // $user = $this->db->get('tbl_user')->row();
 
@@ -124,7 +123,7 @@ class User extends REST_Controller
         'status'    => 'success',
         'error'     => false,
         'message'   => 'Sukses mengubah data',
-        'data'      => $user
+        'data'      => $data
       ], REST_Controller::HTTP_OK);
     } else {
       $this->response([
