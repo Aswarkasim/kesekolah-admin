@@ -108,18 +108,26 @@ class User extends REST_Controller
       'gender'        => $this->post('gender'),
       'nohp'          => $this->post('nohp'),
       'alamat'        => $this->post('alamat'),
-      'latitude'        => $this->post('latitude'),
-      'longitude'        => $this->post('longitude'),
-      'gambar'          => $gambar
+      'latitude'      => $this->post('latitude'),
+      'longitude'     => $this->post('longitude'),
+      'gambar'        => $gambar
     ];
     $this->db->where('id_user', $id_user);
-    $this->db->update('tbl_user', $data);
+    $update = $this->db->update('tbl_user', $data);
 
-    $this->response([
-      'status'    => 'success',
-      'error'     => false,
-      'message'   => 'Sukses mengubah data',
-      'data'      => $data
-    ], REST_Controller::HTTP_OK);
+    if ($update) {
+      $this->response([
+        'status'    => 'success',
+        'error'     => false,
+        'message'   => 'Sukses mengubah data',
+        'data'      => $data
+      ], REST_Controller::HTTP_OK);
+    } else {
+      $this->response([
+        'status'    => 'failed',
+        'error'     => true,
+        'message'   => 'Gagal mengubah data'
+      ], REST_Controller::HTTP_INTERNAL_SERVER_ERROR);
+    }
   }
 }
