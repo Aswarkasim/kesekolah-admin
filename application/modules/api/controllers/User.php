@@ -115,12 +115,15 @@ class User extends REST_Controller
     $this->db->where('id_user', $id_user);
     $update = $this->db->update('tbl_user', $data);
 
+    $this->db->where('id_user', $id_user);
+    $user = $this->db->get('tbl_user')->row();
+
     if ($update) {
       $this->response([
         'status'    => 'success',
         'error'     => false,
         'message'   => 'Sukses mengubah data',
-        'data'      => $data
+        'data'      => $user
       ], REST_Controller::HTTP_OK);
     } else {
       $this->response([
