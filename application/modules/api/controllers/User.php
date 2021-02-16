@@ -123,7 +123,7 @@ class User extends REST_Controller
         'status'    => 'success',
         'error'     => false,
         'message'   => 'Sukses mengubah data',
-        'data'      => $user
+        'data'      => $data
       ], REST_Controller::HTTP_OK);
     } else {
       $this->response([
