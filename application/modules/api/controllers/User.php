@@ -88,20 +88,23 @@ class User extends REST_Controller
           REST_Controller::HTTP_INTERNAL_SERVER_ERROR
         );
       } else {
-        $this->db->where('id_user', $id_user);
-        $user = $this->db->get('tbl_user')->row();
+        // $this->db->where('id_user', $id_user);
+        // $user = $this->db->get('tbl_user')->row();
 
-        if ($user->gambar != "") {
-          unlink($user->gambar);
-        }
+        // if ($user->gambar != "") {
+        //   unlink($user->gambar);
+        // }
 
         $upload_data = ['uploads' => $this->upload->data()];
         $gambar  = $config['upload_path'] . $upload_data['uploads']['file_name'];
       }
     }
 
+
+    $this->load->helper('string');
+
     $data = [
-      'id_user'       => $id_user,
+      'id_user'       => random_string(),
       // 'username'      => $this->post('username'),
       // 'email'         => $this->post('email'),
       'namalengkap'   => $this->post('namalengkap'),
@@ -112,8 +115,9 @@ class User extends REST_Controller
       'longitude'     => $this->post('longitude'),
       'gambar'        => $gambar
     ];
-    $this->db->where('id_user', $id_user);
-    $update = $this->db->update('tbl_user', $data);
+    // $this->db->where('id_user', $id_user);
+    // $update = $this->db->update('tbl_user', $data);
+    $update = $this->db->add('tbl_user', $data);
 
     // $this->db->where('id_user', $id_user);
     // $user = $this->db->get('tbl_user')->row();
