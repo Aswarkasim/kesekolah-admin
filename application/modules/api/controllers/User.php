@@ -103,7 +103,7 @@ class User extends REST_Controller
     $data = [
       'id_user'       => $id_user,
       // 'username'      => $this->post('username'),
-      'email'         => $this->post('email'),
+      // 'email'         => $this->post('email'),
       'namalengkap'   => $this->post('namalengkap'),
       'gender'        => $this->post('gender'),
       'nohp'          => $this->post('nohp'),
