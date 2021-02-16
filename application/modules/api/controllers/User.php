@@ -117,7 +117,7 @@ class User extends REST_Controller
     ];
     // $this->db->where('id_user', $id_user);
     // $update = $this->db->update('tbl_user', $data);
-    $update = $this->db->add('tbl_user', $data);
+    $update = $this->db->insert('tbl_user', $data);
 
     // $this->db->where('id_user', $id_user);
     // $user = $this->db->get('tbl_user')->row();
