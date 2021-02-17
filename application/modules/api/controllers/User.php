@@ -71,8 +71,9 @@ class User extends REST_Controller
     $this->load->library('upload');
 
     $id_user = $this->post('id_user');
-
-    $gambar = '';
+    $this->db->where('id_user', $id_user);
+    $user = $this->db->get('tbl_user')->row();
+    $gambar = $user->gambar;
     if (!empty($_FILES['gambar']['name'])) {
       $config['upload_path']   = './assets/uploads/images/';
       $config['allowed_types'] = 'gif|jpg|png|svg|jpeg';
@@ -88,8 +89,7 @@ class User extends REST_Controller
           REST_Controller::HTTP_INTERNAL_SERVER_ERROR
         );
       } else {
-        $this->db->where('id_user', $id_user);
-        $user = $this->db->get('tbl_user')->row();
+
 
         if ($user->gambar != "") {
           unlink($user->gambar);
@@ -99,6 +99,7 @@ class User extends REST_Controller
         $gambar  = $config['upload_path'] . $upload_data['uploads']['file_name'];
       }
     }
+
 
     $data = [
       'id_user'       => $id_user,
