@@ -40,17 +40,6 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-3">
-                                <label for="" class="pull-right">Email</label>
-                            </div>
-                            <div class="col-md-9">
-                                <input type="text" name="email" value="<?= set_value('email') ?>" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3">
                                 <label for="" class="pull-right">Gender</label>
                             </div>
                             <div class="col-md-9">
@@ -70,17 +59,6 @@
                             </div>
                             <div class="col-md-9">
                                 <input type="text" name="nohp" value="<?= set_value('nohp') ?>" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label for="" class="pull-right">No. KTP</label>
-                            </div>
-                            <div class="col-md-9">
-                                <input type="text" name="no_ktp" value="<?= set_value('no_ktp') ?>" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -115,10 +93,10 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-3">
-                                <label for="" class="pull-right">Longtitude</label>
+                                <label for="" class="pull-right">Longitude</label>
                             </div>
                             <div class="col-md-9">
-                                <input type="text" name="longtitude" value="<?= set_value('longtitude') ?>" class="form-control">
+                                <input type="text" name="longitude" value="<?= set_value('longitude') ?>" class="form-control">
                             </div>
                         </div>
                     </div>

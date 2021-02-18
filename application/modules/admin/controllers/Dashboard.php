@@ -17,10 +17,19 @@ class Dashboard extends CI_Controller
         $id_admin = $this->session->userdata('id_admin');
         $admin = $this->Crud_model->listingOne('tbl_admin', 'id_admin', $id_admin);
 
+        $driver = $this->Crud_model->listingOneAll('tbl_user', 'role', 'driver');
+        $user = $this->Crud_model->listingOneAll('tbl_user', 'role', 'user');
+        $sekolah = $this->Crud_model->listing('tbl_sekolah');
+        $anak = $this->Crud_model->listing('tbl_anak');
+
         $data = [
             'title'     => 'Dashboard',
-            'user'      => $admin,
-            'content'   => 'admin/dashboard/indexs'
+            'admin'      => $admin,
+            'driver'      => $driver,
+            'user'      => $user,
+            'sekolah'      => $sekolah,
+            'anak'      => $anak,
+            'content'   => 'admin/dashboard/index'
         ];
 
         $this->load->view('admin/layout/wrapper', $data, FALSE);

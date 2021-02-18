@@ -56,8 +56,7 @@ class User extends CI_Controller
 
         $valid = $this->form_validation;
 
-        $valid->set_rules('username', 'Nama User', 'required');
-        $valid->set_rules('email', 'Email', 'required|is_unique[tbl_user.email]|valid_email');
+        $valid->set_rules('username', 'Nama User', 'required|is_unique[tbl_user.username]');
         $valid->set_rules('password', 'Password', 'required');
         $valid->set_rules('re_password', 'Retype Password', 'required|matches[password]');
 
@@ -74,16 +73,13 @@ class User extends CI_Controller
             $data = [
                 'id_user'      => random_string(),
                 'username'     => $i->post('username'),
-                'email'         => $i->post('email'),
                 'namalengkap'         => $i->post('namalengkap'),
                 'password'      => sha1($i->post('password')),
                 'role'          => $i->post('role'),
                 'gender'          => $i->post('gender'),
                 'nohp'          => $i->post('nohp'),
-                'no_ktp'          => $i->post('no_ktp'),
-                'nohp'          => $i->post('nohp'),
                 'latitude'          => $i->post('latitude'),
-                'longtitude'          => $i->post('longtitude'),
+                'longitude'          => $i->post('longitude'),
                 'is_active'     => $i->post('is_active')
             ];
             $this->Crud_model->add('tbl_user', $data);
@@ -133,7 +129,7 @@ class User extends CI_Controller
                 'no_ktp'          => $i->post('no_ktp'),
                 'nohp'          => $i->post('nohp'),
                 'latitude'          => $i->post('latitude'),
-                'longtitude'          => $i->post('longtitude'),
+                'longitude'          => $i->post('longitude'),
                 'is_active'     => $i->post('is_active')
             ];
             $this->Crud_model->edit('tbl_user', 'id_user', $id_user, $data);

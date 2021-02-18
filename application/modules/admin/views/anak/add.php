@@ -69,6 +69,22 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="" class="pull-right">Driver</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select name="id_driver" class="form-control select2">
+                                    <option value="none">-- Driver --</option>
+                                    <?php foreach ($driver as $row) { ?>
+                                        <option value="<?= $row->id_user; ?>"><?= $row->namalengkap ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                         <div class="row">

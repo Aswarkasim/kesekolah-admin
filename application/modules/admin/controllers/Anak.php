@@ -19,6 +19,7 @@ class Anak extends CI_Controller
     $this->load->model('admin/Admin_model', 'AM');
 
     $anak = $this->AM->listAnak();
+
     $data = [
       'add'      => 'admin/anak/add',
       'edit'      => 'admin/anak/edit/',
@@ -37,6 +38,7 @@ class Anak extends CI_Controller
 
     $user = $this->Crud_model->listingOneAll('tbl_user', 'role', 'user');
     $sekolah =  $this->Crud_model->listing('tbl_sekolah');
+    $driver = $this->Crud_model->listingOneAll('tbl_user', 'role', 'driver');
 
     $valid = $this->form_validation;
 
@@ -49,6 +51,7 @@ class Anak extends CI_Controller
         'back'      => 'admin/anak',
         'user'      => $user,
         'sekolah'      => $sekolah,
+        'driver'      => $driver,
         'content'   => 'admin/anak/add'
       ];
       $this->load->view('admin/layout/wrapper', $data, FALSE);
@@ -57,6 +60,7 @@ class Anak extends CI_Controller
       $data = [
         'id_anak'      => random_string(),
         'nama_anak'     => $i->post('nama_anak'),
+        'id_driver'     => $i->post('id_driver'),
         'umur'     => $i->post('umur'),
         'id_user'     => $i->post('id_user'),
         'id_sekolah'          => $i->post('id_sekolah')
