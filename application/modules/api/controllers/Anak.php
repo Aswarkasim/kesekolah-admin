@@ -17,11 +17,14 @@ class Anak extends REST_Controller
     $id_anak = $this->get('id_anak');
     $id_sekolah = $this->get('id_sekolah');
     $id_user = $this->get('id_user');
+    $id_driver = $this->get('id_driver');
     $is_jemput = $this->get('is_jemput');
     if ($id_anak) {
       $child = $this->AM->detailChild($id_anak);
     } else if ($id_user) {
       $child = $this->AM->listChildInUser($id_user);
+    } else if ($id_driver) {
+      $child = $this->AM->listChildInDriver($id_driver, $is_jemput);
     } else if ($id_sekolah) {
       $child = $this->AM->listChildInSchool($id_sekolah, $is_jemput);
     } else {
@@ -30,7 +33,8 @@ class Anak extends REST_Controller
     $this->response([
       'error'   => false,
       'message' => 'Success',
-      'anak'    => $child
+      'id_driver'    => $id_driver,
+      'anak'    => $child,
     ], REST_Controller::HTTP_OK);
   }
 
